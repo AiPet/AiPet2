@@ -1,0 +1,22 @@
+{
+  "name": "AiPet",
+  "version": "1.0.0",
+  "description": "Project - tracking device for pets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AiPet/AiPet.git"
+  },
+  "author": "G. Stefanov, B. Kirilov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AiPet/AiPet/issues"
+  },
+  "homepage": "https://github.com/AiPet/AiPet",
+  "dependencies": {
+    "express": "^4.11.1"
+  }
+}
