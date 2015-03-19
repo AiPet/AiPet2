@@ -1,20 +1,96 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(action="/api/addLocation", method="POST")
-   label(for="code") Code:
-   input(name="code", type="text")
-   br
-   label(for="x") X:
-   input(name="x", type="text")
-   br
-   label(for="y") Y:
-   input(name="y", type="text")
-   br
-   label(for="date") Date:
-   input(name="date", type="date")
-   br
-   br
-   input(type="submit", value="Add")
+  table(border="0")
+    tr(align="center")
+      td
+        h1= "Register a user form"
+        form(action="/api/user/register", method="POST")
+         label(for="username") Username:
+         input(name="username", type="text")
+         br
+         label(for="password") Password:
+         input(name="password", type="password")
+         br
+         label(for="email") Email:
+         input(name="email", type="text")
+         br
+         br
+         input(type="submit", value="Register")
+      td
+        h1= "Login to get the token form"
+        form(action="/api/user/auth/local", method="POST")
+         label(for="username") Username:
+         input(name="username", type="text")
+         br
+         label(for="password") Password:
+         input(name="password", type="password")
+         br
+         br
+         input(type="submit", value="Login")
+    tr(align="center")
+      td
+        h1= "Add pet location form"
+        form(action="/api/pet/addlocation", method="POST")
+         label(for="code") Arduino code:
+         input(name="code", type="text")
+         br
+         label(for="x") X:
+         input(name="x", type="text")
+         br
+         label(for="y") Y:
+         input(name="y", type="text")
+         br
+         br
+         input(type="submit", value="Add location")
+      td
+        h1= "Add pet form"
+        form(action="/api/pet/add", method="POST")
+         label(for="name") Pet name:
+         input(name="name", type="text")
+         br
+         label(for="type") Pet type:
+         input(name="type", type="text")
+         br
+         label(for="token") Token:
+         input(name="access_token", type="text")
+         br
+         label(for="x") Home X location:
+         input(name="x", type="text")
+         br
+         label(for="y") Home Y location:
+         input(name="y", type="text")
+         br
+         label(for="code") Code:
+         input(name="code", type="text")
+         br
+         br
+         input(type="submit", value="Add pet")
+    tr(align="center")
+      td
+        h1= "Get Pet"
+        form(action="/api/pet/get", method="POST")
+         label(for="token") Access_token:
+         input(name="access_token", type="text")
+         br
+         input(type="submit", value="Get Pet")
+      td
+        h1= "Get Pet Traces"
+        form(action="/api/pet/trace", method="POST")
+         label(for="token") Access_token:
+         input(name="access_token", type="text")
+         br
+         label(for="start_date") Start Date:
+         input(name="start_date", type="datetime-local")
+         br
+         label(for="end_date") End Date:
+         input(name="end_date", type="datetime-local")
+         br
+         input(type="submit", value="Get Pet")
+     tr(align="center")
+      td
+        h1= "Facebook register"
+        a(href="/api/user/auth/facebook")
+         input(type="submit", value="Facebook" )
+        a(href="/api/user/auth/google")
+         input(type="submit", value="Google+" )
